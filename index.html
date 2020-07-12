@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Aan Patel</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand gf-cairo" href="./index.html"
+          ><img src="res/nav-logo.png" height="32" width="32"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >About Me <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resume</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="jumbotron text-center">
+      <h1 class="gf-cairo">Hi, I'm Aan Patel</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 d-none d-lg-block"></div>
+          <div class="col-lg-4 col-xs-12">
+            <img
+              src="res/aanpatel.png"
+              class="img-fluid mt-4 mb-4"
+              alt="Aan Patel's Photo"
+            />
+          </div>
+          <div class="col-4 d-none d-lg-block"></div>
+        </div>
+        <h2 class="gf-cairo">
+          I love&nbsp;
+          <span id="content-1">App Development</span>
+          <span id="content-2">Web Development</span>
+          <span id="content-3">Computer Vision</span>
+          <span id="content-4">Robotics and IoT</span>
+        </h2>
+      </div>
+    </div>
+    <section class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-2 d-none d-md-block"></div>
+          <div class="col-md-8 col-xs-12 text-center">
+            Hang tight, this site is under development!
+          </div>
+          <div class="col-2 d-none d-md-block"></div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var spans = $('span[id^="content-"]').hide(),
+        i = 0;
+
+      (function cycle() {
+        spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
+
+        i = ++i % spans.length;
+      })();
+    </script>
+  </body>
+</html>
