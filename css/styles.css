@@ -13,3 +13,7 @@
 .hov-en-red:hover {
   color: #ff0000;
 }
+
+.color-transition-smooth {
+  transition: color 0.3s ease;
+}
