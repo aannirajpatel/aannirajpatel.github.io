@@ -1,41 +1,15 @@
 .gf-cairo {
-	font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
-.inner{
-  border:0px solid #ddd;
-  height:1em;
-  overflow:hidden;
-  display:inline-block;
+.hov-en-blue:hover {
+  color: #2867b2;
 }
-.inner span{
-  animation:animate 10s ease infinite;
-  position:relative;
-  color:#e58e26;
+
+.hov-en-purple:hover {
+  color: #7c007c;
 }
-@keyframes animate{
-  0%,100%{
-    top:0;
-  }
-  20%{
-    top:0;
-  }  
-  25%{
-    top:-1.2em;
-  }
-  45%{
-    top:-1.2em;
-  }
-  50%{
-    top:-2.4em;
-  }
-  70%{
-    top:-2.4em;
-  }
-  75%{
-    top:-3.6em;
-  }
-  95%{
-    top:-3.6em;
-  }
+
+.hov-en-red:hover {
+  color: #ff0000;
 }
