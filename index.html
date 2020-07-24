@@ -62,31 +62,35 @@
       </nav>
     </header>
     <div class="jumbotron text-center">
-      <h1 class="gf-cairo">Hi, I'm Aan Patel</h1>
+      <h1 class="gf-cairo">
+        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
+      </h1>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-5 d-none d-lg-block">
-            <h2 style="font-size: 20vh;" class="pt-1">
+          <div class="col-5 d-none d-xl-block">
+            <h2 class="h-social">
               <i
                 class="fab fa-github-square hov-en-purple color-transition-smooth"
-              ></i>
-              &nbsp;
+              ></i
+              >&nbsp;&nbsp;
               <i
                 class="fab fa-linkedin hov-en-blue color-transition-smooth"
               ></i>
             </h2>
           </div>
-          <div class="col-lg-2 col-xs-12">
+          <div class="col-xl-2 col-xs-12">
             <img
               src="res/aanpatel.png"
-              class="img-fluid mt-4 mb-4"
+              class="img-fluid mt-4 mb-4 img-glitch"
               alt="Aan Patel's Photo"
+              onmouseover="profileGlitchOn(this)"
+              onmouseout="profileGlitchOff(this)"
             />
           </div>
-          <div class="col-5 d-none d-lg-block">
-            <h2 style="font-size: 20vh;" class="pt-1">
-              <i class="fab fa-youtube hov-en-red color-transition-smooth"></i>
-              &nbsp;
+          <div class="col-5 d-none d-xl-block">
+            <h2 class="h-social">
+              <i class="fab fa-youtube hov-en-red color-transition-smooth"></i
+              >&nbsp;&nbsp;
               <i
                 class="fas fa-envelope hov-en-blue color-transition-smooth"
               ></i>
@@ -95,10 +99,37 @@
         </div>
         <h2 class="gf-cairo">
           I love&nbsp;
-          <span id="content-1">App Development</span>
-          <span id="content-2">Web Development</span>
-          <span id="content-3">Computer Vision</span>
-          <span id="content-4">Robotics and IoT</span>
+          <span
+            id="content-1"
+            style="display: inline-block; position: relative;"
+            class="glitch-cycle"
+            >App Development</span
+          >
+          <span
+            id="content-2"
+            style="display: inline-block; position: relative;"
+            class="glitch-cycle"
+            data-text="Web Development"
+            >Web Development</span
+          >
+          <span
+            id="content-3"
+            style="display: inline-block; position: relative;"
+            class="glitch-cycle"
+            >Computer Vision</span
+          >
+          <span
+            id="content-4"
+            style="display: inline-block; position: relative;"
+            class="glitch-cycle"
+            >Robotics and IoT</span
+          >
+          <span
+            id="content-5"
+            style="display: inline-block; position: relative;"
+            class="glitch-cycle"
+            >Tech Education</span
+          >
         </h2>
       </div>
     </div>
@@ -133,9 +164,48 @@
 
       (function cycle() {
         spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
-
         i = ++i % spans.length;
       })();
+
+      function profileGlitchOff(imgTag) {}
+      function profileGlitchOn(imgTag) {
+        $(imgTag)
+          .fadeOut(0, function () {
+            imgTag.src = "res/aanpatel-glitch.png";
+          })
+          .fadeIn(100, function () {
+            imgTag.src = "res/aanpatel.png";
+          });
+      }
+      window.onload = (event) => {
+        randomGlitchImg();
+      };
+
+      var window_focus;
+
+      window.onblur = function () {
+        window_focus = false;
+      };
+
+      window.onfocus = function () {
+        window_focus = true;
+      };
+
+      function randomGlitchImg() {
+        $(".img-glitch")
+          .fadeOut(0, function () {
+            $(".img-glitch").attr("src", "res/aanpatel-glitch.png");
+          })
+          .fadeIn(200, function () {
+            $(".img-glitch").attr("src", "res/aanpatel.png");
+          });
+        if (window_focus) {
+          setTimeout(randomGlitchImg, 10000);
+        }
+      }
+      console.log(
+        "Here's a gift for opening the console: patelaan13@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets make cool stuff!"
+      );
     </script>
   </body>
 </html>
