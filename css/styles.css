@@ -104,7 +104,7 @@
 
 /*--- GLITCH CODE, I've taken it from https://css-tricks.com/glitch-effect-text-images-svg/ */
 
-.glitch {
+/* .glitch {
   color: #212529;
   position: relative;
   margin: 0 auto;
@@ -265,7 +265,7 @@
   background: #e9ecef;
   overflow: hidden;
   animation: noise-anim-2 15s infinite linear alternate-reverse;
-}
+} */
 
 @keyframes glitch-outline {
   0% {
@@ -352,15 +352,28 @@
 }
 
 .nav-link:hover {
-  animation: glitch-outline-no-move 0.2s steps(3, end);
+  animation: glitch-outline-no-move 0.07s steps(3, end);
+}
+
+.nav-link:hover::before {
+  content: " ";
 }
 
 #nav-community:hover::after {
-  content: " ❤️";
+  content: " ❤️ ";
   font-size: smaller;
 }
 
-#nav-resume.glitch:hover::after {
-  content: " 🗎";
+#nav-resume:hover::after {
+  content: " 🗎 ";
+}
+
+#nav-projects:hover::after {
+  content: " 🧑‍💻 ";
+  font-size: smaller;
+}
+
+#nav-about:hover::after {
+  content: " 😃 ";
   font-size: smaller;
 }
