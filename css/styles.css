@@ -39,7 +39,7 @@
   /* Styles */
   .h-social {
     font-size: 9rem;
-    padding-top: 0.2rem;
+    padding-top: 0.3rem;
   }
 }
 
@@ -48,7 +48,7 @@
   /* Styles */
   .h-social {
     font-size: 9rem;
-    padding-top: 0.2rem;
+    padding-top: 0.3rem;
   }
 }
 
@@ -65,7 +65,7 @@
   /* Styles */
   .h-social {
     font-size: 8rem;
-    padding-top: 0.5rem;
+    padding-top: 1.8rem;
   }
   .nav-link:hover {
     transform: scale(1.2);
@@ -104,7 +104,7 @@
 
 /*--- GLITCH CODE, I've taken it from https://css-tricks.com/glitch-effect-text-images-svg/ */
 
-/* .glitch {
+.glitch {
   color: #212529;
   position: relative;
   margin: 0 auto;
@@ -265,7 +265,7 @@
   background: #e9ecef;
   overflow: hidden;
   animation: noise-anim-2 15s infinite linear alternate-reverse;
-} */
+}
 
 @keyframes glitch-outline {
   0% {
@@ -376,4 +376,31 @@
 #nav-about:hover::after {
   content: " 😃 ";
   font-size: smaller;
+}
+
+.iframe-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.iframe-container-full {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 120%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+.bg-gray {
+  background: #e9ecef;
 }
