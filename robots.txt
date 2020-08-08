@@ -4,4 +4,5 @@ Disallow: /res/misc
 Disallow: /fa
 Disallow: /css
 Disallow: /js
+Disallow: 404.html
 Sitemap: https://www.aanpatel.tech/sitemap.xml
