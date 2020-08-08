@@ -43,10 +43,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#about-pg" id="nav-about"
-                >About Me <span class="sr-only">(current)</span></a
-              >
+            <li class="nav-item">
+              <a class="nav-link" href="./#about-pg" id="nav-about">About Me</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="nav-projects" href="./projects/"
@@ -73,9 +71,10 @@
     </header>
     <br /><br />
     <div class="jumbotron text-center pb-2">
-      <h1 class="gf-cairo">
-        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
-      </h1>
+      <h2 class="gf-cairo h1">
+        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>, but
+        I can't find what you're looking for
+      </h2>
       <div class="container-fluid">
         <div class="row">
           <div class="col-5 d-none d-xl-block">
@@ -129,74 +128,24 @@
             </h2>
           </div>
         </div>
-        <h2 class="gf-cairo">
-          I love&nbsp;
+        <h1 class="gf-cairo">
           <span
             id="content-1"
             style="display: inline-block; position: relative;"
             class="glitch-cycle"
-            >App Development</span
+            >404</span
           >
           <span
             id="content-2"
             style="display: inline-block; position: relative;"
             class="glitch-cycle"
             data-text="Web Development"
-            >Web Development</span
+            >Not Found</span
           >
-          <span
-            id="content-3"
-            style="display: inline-block; position: relative;"
-            class="glitch-cycle"
-            >Computer Vision</span
-          >
-          <span
-            id="content-4"
-            style="display: inline-block; position: relative;"
-            class="glitch-cycle"
-            >IoT, AI, & Robotics</span
-          >
-          <span
-            id="content-5"
-            style="display: inline-block; position: relative;"
-            class="glitch-cycle"
-            >Tech Education</span
-          >
-        </h2>
+        </h1>
       </div>
       <p class="text-center"><span class="fas"></span></p>
     </div>
-    <section class="container-fluid">
-      <div class="container">
-        <div class="row" id="about-pg">
-          <div class="col-2 d-none d-md-block"></div>
-          <div class="col-md-8 col-xs-12 text-justify">
-            <h3>About Me</h3>
-            <p>
-              I am a junior at the University of North Carolina at Chapel Hill,
-              majoring in Computer Science. I love solving problems using the
-              power of automation through computing. My academic areas of
-              interest include Computer Vision, IoT, Robotics, Machine Learning,
-              and about anything else that involves programming.
-            </p>
-            <p>
-              Currently, I am working with my friends, colleagues, and
-              connections on 3 big, cutting-edge tech projects, via an
-              open-to-all learning-by-doing initiative that I have
-              <a href="./community/">started</a>. If you'd like to join in, make
-              sure to watch GDG Chapel Hill's Roadmap for Fall 2020 video
-              <a href="https://youtu.be/amrq6A1Waa0">here</a>, where I've
-              explained my initiative.
-            </p>
-            <p>
-              PS: I'm open to job opportunities! Looking for a summer internship
-              in software development for 2021.
-            </p>
-          </div>
-          <div class="col-2 d-none d-md-block"></div>
-        </div>
-      </div>
-    </section>
     <hr />
     <section class="container">
       <div class="text-center">
@@ -298,6 +247,20 @@
       console.log(
         "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
       );
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Aan Patel",
+        "url": "http://www.aanpatel.tech",
+        "address": "United States",
+        "sameAs": [
+          "http://www.facebook.com/aan.patel.395",
+          "https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg",
+          "https://linkedin.com/in/aan-patel"
+        ]
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /admin
+Disallow: /res/misc
+Disallow: /fa
+Disallow: /css
+Disallow: /js
+Sitemap: https://www.aanpatel.tech/sitemap.xml
