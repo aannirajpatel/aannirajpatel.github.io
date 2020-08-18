@@ -404,3 +404,11 @@
 .bg-gray {
   background: #e9ecef;
 }
+
+.tech-btn {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.3rem;
+}
