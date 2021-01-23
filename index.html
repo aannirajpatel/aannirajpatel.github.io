@@ -1,350 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="fa/css/all.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/styles.min.css" />
-    <!-- META DESC -->
-    <meta
-      name="description"
-      content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education."
-    />
-    <!-- OPENGRAPH -->
-    <meta
-      property="og:title"
-      content="Aan Patel: Student, Leader, Innovator, Tech Enthusiast"
-    />
-    <meta property="og:site_name" content="Aan Patel" />
-    <meta property="og:url" content="https://www.aanpatel.tech/" />
-    <meta
-      property="og:description"
-      content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education."
-    />
-    <meta property="og:type" content="profile" />
-    <meta
-      property="og:image"
-      content="https://www.aanpatel.tech/res/aanpatel.png"
-    />
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="aanpatel99" />
-    <meta
-      name="twitter:title"
-      content="Aan Patel - Student, Leader, Innovator, Tech Enthusiast"
-    />
-    <meta
-      name="twitter:description"
-      content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education."
-    />
-    <meta
-      name="twitter:image"
-      content="https://aanpatel.tech/res/aanpatel.png"
-    />
+  <link rel="stylesheet" href="fa/css/all.min.css" />
 
-    <title>Aan Patel - Student, Leader, Innovator, Tech Enthusiast</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand gf-cairo" href="./"
-          ><img
-            src="res/nav-logo.png"
-            height="32"
-            width="32"
-            alt="Aan Patel's website logo"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <link rel="stylesheet" href="css/styles.min.css" />
+  <!-- META DESC -->
+  <meta name="description"
+    content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education." />
+  <!-- OPENGRAPH -->
+  <meta property="og:title" content="Aan Patel: Student, Leader, Innovator, Tech Enthusiast" />
+  <meta property="og:site_name" content="Aan Patel" />
+  <meta property="og:url" content="https://www.aanpatel.tech/" />
+  <meta property="og:description"
+    content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="https://www.aanpatel.tech/res/aanpatel.png" />
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="aanpatel99" />
+  <meta name="twitter:title" content="Aan Patel - Student, Leader, Innovator, Tech Enthusiast" />
+  <meta name="twitter:description"
+    content="I am Aan Patel. Student, Leader, Innovator, Tech Entusiast. I love App Development, IoT, Computer Vision, Robotics, & Tech Education." />
+  <meta name="twitter:image" content="https://aanpatel.tech/res/aanpatel.png" />
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./" id="nav-about"
-                >About Me <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-projects" href="./projects/"
-                >Projects</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-community" href="./community/"
-                >Community</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="nav-resume"
-                href="./res/resume.pdf"
-                target="_blank"
-                >Resume</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <br /><br />
-    <div class="jumbotron text-center pb-2 material-box">
-      <h1 class="gf-cairo">
-        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
-      </h1>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-5 d-none d-xl-block">
-            <h2 class="h-social">
-              <a
-                href="https://www.github.com/aannirajpatel/"
-                target="_blank"
-                style="text-decoration: none; color: #212529"
-                ><i
-                  class="fab fa-github-square hov-en-purple color-transition-smooth"
-                ></i></a
-              >&nbsp;&nbsp;
-              <a
-                href="https://www.linkedin.com/in/aan-patel/"
-                target="_blank"
-                style="text-decoration: none; color: #212529"
-                ><i
-                  class="fab fa-linkedin hov-en-blue color-transition-smooth"
-                ></i
-              ></a>
-            </h2>
-          </div>
-          <div class="col-xl-2 col-xs-12">
-            <img
-              src="res/aanpatel.png"
-              class="img-fluid mt-4 mb-4 img-glitch"
-              alt="Aan Patel's Photo"
-              onmouseover="profileGlitchOn(this)"
-              onmouseout="profileGlitchOff(this)"
-            />
-            <img
-              src="res/aanpatel-glitch.png"
-              class="d-none"
-              alt="Aan Patel's profile picture."
-            />
-          </div>
-          <div class="col-5 d-none d-xl-block">
-            <h2 class="h-social">
-              <a
-                href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg"
-                target="_blank"
-                style="text-decoration: none; color: #212529"
-                ><i
-                  class="fab fa-youtube hov-en-red color-transition-smooth"
-                ></i></a
-              >&nbsp;&nbsp;
-              <a
-                href="mailto:aanpatel.tech@gmail.com"
-                target="_blank"
-                style="text-decoration: none; color: #212529"
-                ><i
-                  class="fas fa-envelope hov-en-blue color-transition-smooth"
-                ></i
-              ></a>
-            </h2>
-          </div>
-        </div>
-        <h2 class="gf-cairo">
-          I love&nbsp;
-          <span
-            id="content-1"
-            style="display: inline-block; position: relative"
-            class="glitch-cycle"
-            >App Development</span
-          >
-          <span
-            id="content-2"
-            style="display: inline-block; position: relative"
-            class="glitch-cycle"
-            data-text="Web Development"
-            >Web Development</span
-          >
-          <span
-            id="content-3"
-            style="display: inline-block; position: relative"
-            class="glitch-cycle"
-            >Computer Vision</span
-          >
-          <span
-            id="content-4"
-            style="display: inline-block; position: relative"
-            class="glitch-cycle"
-            >IoT, AI, & Robotics</span
-          >
-          <span
-            id="content-5"
-            style="display: inline-block; position: relative"
-            class="glitch-cycle"
-            >Tech Education</span
-          >
-        </h2>
+  <title>Aan Patel - Student, Leader, Innovator, Tech Enthusiast</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand gf-cairo" href="./"><img src="res/nav-logo.png" height="32" width="32"
+          alt="Aan Patel's website logo" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./" id="nav-about">About Me <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-projects" href="./projects/">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-community" href="./community/">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-resume" href="./res/resume.pdf" target="_blank">Resume</a>
+          </li>
+        </ul>
       </div>
-      <p class="text-center"><span class="fas"></span></p>
+    </nav>
+  </header>
+  <br /><br />
+  <div class="jumbotron text-center pb-2 material-box">
+    <h1 class="gf-cairo">
+      Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
+    </h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-5 d-none d-xl-block">
+          <h2 class="h-social">
+            <a href="https://www.github.com/aannirajpatel/" target="_blank"
+              style="text-decoration: none; color: #212529"><i
+                class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
+              style="text-decoration: none; color: #212529"><i
+                class="fab fa-linkedin hov-en-blue color-transition-smooth"></i></a>
+          </h2>
+        </div>
+        <div class="col-xl-2 col-xs-12">
+          <img src="res/aanpatel.png" class="img-fluid mt-4 mb-4 img-glitch" alt="Aan Patel's Photo"
+            onmouseover="profileGlitchOn(this)" onmouseout="profileGlitchOff(this)" />
+          <img src="res/aanpatel-glitch.png" class="d-none" alt="Aan Patel's profile picture." />
+        </div>
+        <div class="col-5 d-none d-xl-block">
+          <h2 class="h-social">
+            <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
+              style="text-decoration: none; color: #212529"><i
+                class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
+            <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #212529"><i
+                class="fas fa-envelope hov-en-blue color-transition-smooth"></i></a>
+          </h2>
+        </div>
+      </div>
+      <h2 class="gf-cairo">
+        I love&nbsp;
+        <span id="content-1" style="display: inline-block; position: relative" class="glitch-cycle">App
+          Development</span>
+        <span id="content-2" style="display: inline-block; position: relative" class="glitch-cycle"
+          data-text="Web Development">Web Development</span>
+        <span id="content-3" style="display: inline-block; position: relative" class="glitch-cycle">Computer
+          Vision</span>
+        <span id="content-4" style="display: inline-block; position: relative" class="glitch-cycle">IoT, AI, &
+          Robotics</span>
+        <span id="content-5" style="display: inline-block; position: relative" class="glitch-cycle">Tech
+          Education</span>
+      </h2>
     </div>
-    <section class="container-fluid">
-      <div class="container">
-        <div class="row" id="about-pg">
-          <div class="col-2 d-none d-md-block"></div>
-          <div class="col-md-8 col-xs-12 text-justify">
-            <h3>About Me</h3>
-            <p>
-              I am a junior at the University of North Carolina at Chapel Hill,
-              majoring in Computer Science. I love solving problems using the
-              power of automation through computing. My academic areas of
-              interest include Computer Vision, IoT, Robotics, Machine Learning,
-              and about anything else that involves programming.
-            </p>
-            <p>
-              Currently, I am working with my friends, colleagues, and
-              connections on 3 big, cutting-edge tech projects, via an
-              open-to-all learning-by-doing initiative that I have
-              <a href="./community/">started</a>. If you'd like to join in, make
-              sure to watch GDG Chapel Hill's Roadmap for Fall 2020 video
-              <a href="https://youtu.be/amrq6A1Waa0">here</a>, where I've
-              explained my initiative.
-            </p>
-            <p>
-              PS: Actively looking for a winter 2020 and summer 2021 software
-              development internship.
-            </p>
-          </div>
-          <div class="col-2 d-none d-md-block"></div>
+    <p class="text-center"><span class="fas"></span></p>
+  </div>
+  <section class="container-fluid">
+    <div class="container">
+      <div class="row" id="about-pg">
+        <div class="col-2 d-none d-md-block"></div>
+        <div class="col-md-8 col-xs-12 text-justify">
+          <h3>About Me</h3>
+          <p>
+            I am a junior at the University of North Carolina at Chapel Hill, majoring in Computer Science with a minor
+            in Entrepreneurship.
+
+            I enjoy solving problems for people using the power of computing, and I am interested in making a positive
+            impact on the world through innovation and entrepreneurship. Thus I spend my time finding, and trying to
+            solve problems for people using state-of-the-art software tools. An entrepreneurial mindset has taught me to
+            empathize well, which helps me pin-point well-defined problems. Finally, my Computer Science skills help me
+            structure and build efficient solutions to those problems.
+
+            My academic areas of interest include Machine Learning, Computer Vision, Web and Mobile App Development,
+            IoT, and Robotics. I have built useful <a href="./projects/">projects</a> in all of these areas.
+          </p>
+          <p>
+            Currently, I am working with my friends, colleagues, and
+            connections on 3 big, cutting-edge tech projects, via an
+            open-to-all learning-by-doing initiative that I have
+            <a href="./community/">started</a>. If you'd like to join in, make
+            sure to watch GDG Chapel Hill's Roadmap for Fall 2020 video
+            <a href="https://youtu.be/amrq6A1Waa0">here</a>, where I've
+            explained my initiative.
+          </p>
+          <p>
+            PS: Actively looking for full-time new grad roles starting December 2021/January 2022.
+          </p>
         </div>
+        <div class="col-2 d-none d-md-block"></div>
       </div>
-    </section>
-    <hr />
-    <section class="container">
-      <div class="text-center">
-        &copy; 2020, Aan Patel. All rights reserved<br />
-        <hr />
-        <p class="h2">
-          <a
-            href="https://www.github.com/aannirajpatel/"
-            target="_blank"
-            style="text-decoration: none; color: #212529"
-            ><i
-              class="fab fa-github-square hov-en-purple color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="https://www.linkedin.com/in/aan-patel/"
-            target="_blank"
-            style="text-decoration: none; color: #212529"
-            ><i
-              class="fab fa-linkedin hov-en-blue color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg"
-            target="_blank"
-            style="text-decoration: none; color: #212529"
-            ><i
-              class="fab fa-youtube hov-en-red color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="mailto:aanpatel.tech@gmail.com"
-            target="_blank"
-            style="text-decoration: none; color: #212529"
-            ><i class="fas fa-envelope hov-en-blue color-transition-smooth"></i
-          ></a>
-        </p>
-      </div>
-    </section>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var spans = $('span[id^="content-"]').hide(),
-        i = 0;
+    </div>
+  </section>
+  <hr />
+  <section class="container">
+    <div class="text-center">
+      &copy; 2020, Aan Patel. All rights reserved<br />
+      <hr />
+      <p class="h2">
+        <a href="https://www.github.com/aannirajpatel/" target="_blank" style="text-decoration: none; color: #212529"><i
+            class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
+          style="text-decoration: none; color: #212529"><i
+            class="fab fa-linkedin hov-en-blue color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
+          style="text-decoration: none; color: #212529"><i
+            class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #212529"><i
+            class="fas fa-envelope hov-en-blue color-transition-smooth"></i></a>
+      </p>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    var spans = $('span[id^="content-"]').hide(),
+      i = 0;
 
-      (function cycle() {
-        spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
-        i = ++i % spans.length;
-      })();
+    (function cycle() {
+      spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
+      i = ++i % spans.length;
+    })();
 
-      function profileGlitchOff(imgTag) {}
-      function profileGlitchOn(imgTag) {
-        $(imgTag)
-          .fadeOut(0, function () {
-            imgTag.src = "res/aanpatel-glitch.png";
-          })
-          .fadeIn(100, function () {
-            imgTag.src = "res/aanpatel.png";
-          });
+    function profileGlitchOff(imgTag) { }
+    function profileGlitchOn(imgTag) {
+      $(imgTag)
+        .fadeOut(0, function () {
+          imgTag.src = "res/aanpatel-glitch.png";
+        })
+        .fadeIn(100, function () {
+          imgTag.src = "res/aanpatel.png";
+        });
+    }
+    window.onload = (event) => {
+      randomGlitchImg();
+    };
+
+    var window_focus;
+
+    window.onblur = function () {
+      window_focus = false;
+    };
+
+    window.onfocus = function () {
+      window_focus = true;
+    };
+
+    function randomGlitchImg() {
+      $(".img-glitch")
+        .fadeOut(0, function () {
+          $(".img-glitch").attr("src", "res/aanpatel-glitch.png");
+        })
+        .fadeIn(200, function () {
+          $(".img-glitch").attr("src", "res/aanpatel.png");
+        });
+      if (window_focus) {
+        setTimeout(randomGlitchImg, 10000);
       }
-      window.onload = (event) => {
-        randomGlitchImg();
-      };
-
-      var window_focus;
-
-      window.onblur = function () {
-        window_focus = false;
-      };
-
-      window.onfocus = function () {
-        window_focus = true;
-      };
-
-      function randomGlitchImg() {
-        $(".img-glitch")
-          .fadeOut(0, function () {
-            $(".img-glitch").attr("src", "res/aanpatel-glitch.png");
-          })
-          .fadeIn(200, function () {
-            $(".img-glitch").attr("src", "res/aanpatel.png");
-          });
-        if (window_focus) {
-          setTimeout(randomGlitchImg, 10000);
-        }
-      }
-      console.log(
-        "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
-      );
-    </script>
-    <script type="application/ld+json">
+    }
+    console.log(
+      "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
+    );
+  </script>
+  <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -358,5 +235,6 @@
         ]
       }
     </script>
-  </body>
+</body>
+
 </html>
