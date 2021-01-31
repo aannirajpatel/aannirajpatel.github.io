@@ -34,10 +34,10 @@
   <title>Aan Patel - Student, Leader, Innovator, Tech Enthusiast</title>
 </head>
 
-<body>
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand gf-cairo" href="./"><img src="res/nav-logo.png" height="32" width="32"
+<body id="body">
+  <header class="fixed-top" id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand gf-cairo" href="./"><img src="res/nav-logo.png" height="28" width="70"
           alt="Aan Patel's website logo" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,73 +61,77 @@
         </ul>
       </div>
     </nav>
-  </header>
-  <br /><br />
-  <div class="jumbotron text-center pb-2 material-box">
-    <h1 class="gf-cairo">
-      Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
-    </h1>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-5 d-none d-xl-block">
-          <h2 class="h-social">
-            <a href="https://www.github.com/aannirajpatel/" target="_blank"
-              style="text-decoration: none; color: #212529"><i
-                class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
-              style="text-decoration: none; color: #212529"><i
-                class="fab fa-linkedin hov-en-blue color-transition-smooth"></i></a>
-          </h2>
+    <div class="jumbotron text-center pb-2 material-box bg-gray transition-smooth br-0" id="hello-text">
+      <h1 class="gf-cairo">
+        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>
+      </h1>
+      <div class="container-fluid">
+        <div class="row" id="socials-row">
+          <div class="col-5 d-none d-xl-block">
+            <h2 class="h-social">
+              <a href="https://www.github.com/aannirajpatel/" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
+              <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-linkedin hov-en-blue color-transition-smooth"></i></a>
+            </h2>
+          </div>
+          <div class="col-xl-2 col-xs-12">
+            <img src="res/aanpatel.png" class="img-fluid mt-4 mb-4 img-glitch" alt="Aan Patel's Photo"
+              onmouseover="profileGlitchOn(this)" onmouseout="profileGlitchOff(this)" />
+            <img src="res/aanpatel-glitch.png" class="d-none" alt="Aan Patel's profile picture." />
+          </div>
+          <div class="col-5 d-none d-xl-block">
+            <h2 class="h-social">
+              <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
+              <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #fff"><i
+                  class="fas fa-envelope hov-en-blue color-transition-smooth"></i></a>
+            </h2>
+          </div>
         </div>
-        <div class="col-xl-2 col-xs-12">
-          <img src="res/aanpatel.png" class="img-fluid mt-4 mb-4 img-glitch" alt="Aan Patel's Photo"
-            onmouseover="profileGlitchOn(this)" onmouseout="profileGlitchOff(this)" />
-          <img src="res/aanpatel-glitch.png" class="d-none" alt="Aan Patel's profile picture." />
-        </div>
-        <div class="col-5 d-none d-xl-block">
-          <h2 class="h-social">
-            <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
-              style="text-decoration: none; color: #212529"><i
-                class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
-            <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #212529"><i
-                class="fas fa-envelope hov-en-blue color-transition-smooth"></i></a>
-          </h2>
-        </div>
+        <h2 class="gf-cairo">
+          I love&nbsp;
+          <span id="content-1" style="display: inline-block; position: relative" class="glitch-cycle">App
+            Development</span>
+          <span id="content-2" style="display: inline-block; position: relative" class="glitch-cycle"
+            data-text="Web Development">Web Development</span>
+          <span id="content-3" style="display: inline-block; position: relative" class="glitch-cycle">Computer
+            Vision</span>
+          <span id="content-4" style="display: inline-block; position: relative" class="glitch-cycle">IoT, AI, &
+            Robotics</span>
+          <span id="content-5" style="display: inline-block; position: relative" class="glitch-cycle">Tech
+            Education</span>
+        </h2>
       </div>
-      <h2 class="gf-cairo">
-        I love&nbsp;
-        <span id="content-1" style="display: inline-block; position: relative" class="glitch-cycle">App
-          Development</span>
-        <span id="content-2" style="display: inline-block; position: relative" class="glitch-cycle"
-          data-text="Web Development">Web Development</span>
-        <span id="content-3" style="display: inline-block; position: relative" class="glitch-cycle">Computer
-          Vision</span>
-        <span id="content-4" style="display: inline-block; position: relative" class="glitch-cycle">IoT, AI, &
-          Robotics</span>
-        <span id="content-5" style="display: inline-block; position: relative" class="glitch-cycle">Tech
-          Education</span>
-      </h2>
+      <p class="text-center h3 hover-glow color-transition-smooth" id="go-down"><span class="fas fa-angle-down"></span>
+      </p>
     </div>
-    <p class="text-center"><span class="fas"></span></p>
-  </div>
-  <section class="container-fluid">
+  </header>
+
+
+  <section class="container-fluid pt-3" id="about-pg">
     <div class="container">
-      <div class="row" id="about-pg">
-        <div class="col-2 d-none d-md-block"></div>
+      <div class="row">
+        <div class="col-md-2 d-none d-md-block"></div>
         <div class="col-md-8 col-xs-12 text-justify">
           <h3>About Me</h3>
           <p>
-            I am a junior at the University of North Carolina at Chapel Hill, majoring in Computer Science with a minor
-            in Entrepreneurship.
-
+            I am a senior at the University of North Carolina at Chapel Hill, majoring in Computer Science with a minor
+            in Entrepreneurship.</p>
+          <p>
             I enjoy solving problems for people using the power of computing, and I am interested in making a positive
             impact on the world through innovation and entrepreneurship. Thus I spend my time finding, and trying to
             solve problems for people using state-of-the-art software tools. An entrepreneurial mindset has taught me to
-            empathize well, which helps me pin-point well-defined problems. Finally, my Computer Science skills help me
-            structure and build efficient solutions to those problems.
-
+            empathize well, which helps me pin-point important problems. Finally, my Computer Science skills help me
+            structure and build efficient solutions to those problems, be it mobile apps, websites, or robots.
+          </p>
+          <p>
             My academic areas of interest include Machine Learning, Computer Vision, Web and Mobile App Development,
             IoT, and Robotics. I have built useful <a href="./projects/">projects</a> in all of these areas.
+          </p>
           </p>
           <p>
             Currently, I am working with my friends, colleagues, and
@@ -142,14 +146,57 @@
             PS: Actively looking for full-time new grad roles starting December 2021/January 2022.
           </p>
         </div>
-        <div class="col-2 d-none d-md-block"></div>
+        <div class="col-md-2 d-none d-md-block"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 d-none d-md-block"></div>
+        <div class="col-md-8 col-xs-12 text-justify">
+          <hr>
+          <h3>Origin Story</h3>
+          <br>
+          <p>
+            Watch this video to get to know where I come from!
+          </p>
+
+          <div class="video-background">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NZsIUbjcUfY" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen style="display: block;"></iframe>
+          </div>
+          <br>
+          <p class="mb-0">
+            Here is an audio podcast, where I answer the following 3 questions:
+          </p>
+          <ol style="margin-top:0; padding-top: 0px;">
+            <li>What personal experiences define you the most?</li>
+            <li>What is a recent setback and how did you overcome it?</li>
+            <li>What would you do specifically if you did not have to worry about money?</li>
+          </ol>
+          <div class="container" style="overflow: hidden;">
+            <audio controls class="container">
+              <source src="./res/origin_story_audio.mp3" type="audio/mpeg">
+              Your browser does not support the audio tag.
+            </audio>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br><br>
+          <br>
+          <br>
+          <br>
+        </div>
+        <div class="col-md-2 d-none d-md-block"></div>
       </div>
     </div>
   </section>
   <hr />
   <section class="container">
     <div class="text-center">
-      &copy; 2020, Aan Patel. All rights reserved<br />
+      &copy; 2021, Aan Patel. All rights reserved<br />
       <hr />
       <p class="h2">
         <a href="https://www.github.com/aannirajpatel/" target="_blank" style="text-decoration: none; color: #212529"><i
@@ -214,12 +261,36 @@
           $(".img-glitch").attr("src", "res/aanpatel.png");
         });
       if (window_focus) {
-        setTimeout(randomGlitchImg, 10000);
+        setTimeout(randomGlitchImg, 4000);
       }
     }
     console.log(
       "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
     );
+    $(document).ready(function () {
+
+      let outerHeight = $('#header').outerHeight();
+
+      function setBodyPadding(inc = 30) {
+        $('#body').css('padding-top', (outerHeight + inc) + "px")
+      }
+
+      $('#go-down').click(function () {
+        $(document).scrollTop(outerHeight / 2 + 10);
+      })
+
+      function scrollFunction() {
+        if ((document.body.scrollTop > outerHeight / 4 || document.documentElement.scrollTop > outerHeight / 4)) {
+          $('#hello-text').slideUp("200");
+        } else {
+          setTimeout(setBodyPadding, 105);
+          $('#hello-text').show("100");
+        }
+      }
+      setBodyPadding()
+      window.onscroll = function () { scrollFunction() };
+    })
+
   </script>
   <script type="application/ld+json">
       {

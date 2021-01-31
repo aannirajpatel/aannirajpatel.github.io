@@ -1,17 +1,32 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .gf-cairo {
   font-family: "Cairo", sans-serif;
+}
+.hover-glow a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+.hover-glow:hover {
+  opacity: 80%;
 }
 
 .hov-en-blue:hover {
   color: #2867b2;
+  transition: color 0.3s ease;
 }
 
 .hov-en-purple:hover {
   color: #7c007c;
+  transition: color 0.3s ease;
 }
 
 .hov-en-red:hover {
   color: #ff0000;
+  transition: color 0.3s ease;
 }
 
 .color-transition-smooth:hover {
@@ -105,7 +120,7 @@
 /*--- GLITCH CODE, I've taken it from https://css-tricks.com/glitch-effect-text-images-svg/ */
 
 .glitch {
-  color: #212529;
+  color: #fff;
   position: relative;
   margin: 0 auto;
 }
@@ -402,7 +417,12 @@
   padding-top: 120%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 .bg-gray {
-  background: #e9ecef;
+  background: rgb(7, 7, 7);
+  color: white;
+}
+
+.navbar {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px #fff;
 }
 
 .tech-btn {
@@ -414,6 +434,15 @@
 }
 
 /* JUMBOTRON STYLING */
+
+.br-0 {
+  border-radius: 0px;
+}
+
+.transition-smooth {
+  transition: 0.4s;
+}
+
 .color-white {
   color: white;
 }
@@ -431,4 +460,37 @@
 /* FAQ Styling */
 .cursor-pointer {
   cursor: pointer;
+}
+
+/* Video Styling from https://jsfiddle.net/ohepworthbell/k72hbytr/ */
+
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 56%;
+  min-height: 315px;
+}
+.video-background iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+@media (min-aspect-ratio: 1.7777777778) {
+  .video-background iframe {
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 1.7777777778) {
+  .video-background iframe {
+    width: 177.78vh;
+  }
+}
+
+/* Background for navbar */
+
+.bg-dark {
+  background-color: #000000 !important;
 }
