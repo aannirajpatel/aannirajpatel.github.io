@@ -14,24 +14,82 @@ html {
   opacity: 80%;
 }
 
-.hov-en-blue:hover {
-  color: #2867b2;
+.hov-en-email:hover {
+  color: #00c6ff;
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #0072ff,
+    #00c6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #0072ff,
+    #00c6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s ease;
+}
+
+.hov-en-linkedin:hover {
+  color: #00d2ff;
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #3a7bd5,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #3a7bd5,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: color 0.3s ease;
 }
 
 .hov-en-purple:hover {
-  color: #7c007c;
-  transition: color 0.3s ease;
+  background: #8e2de2; /* fallback for old browsers */
+  color: #8e2de2;
+  background: -webkit-linear-gradient(
+    to bottom,
+    #8e2de2,
+    #4a00e0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #8e2de2,
+    #4a00e0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hov-en-red:hover {
-  color: #ff0000;
-  transition: color 0.3s ease;
+  color: #ed213a;
+  background: #d31027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #ea384d,
+    #d31027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ea384d,
+    #d31027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .color-transition-smooth:hover {
   /* animation: glitch-outline 0.2s steps(3, end); */
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -374,7 +432,7 @@ html {
   content: " ";
 }
 
-#nav-community:hover::after {
+/* #nav-community:hover::after {
   content: " ❤️ ";
   font-size: smaller;
 }
@@ -389,10 +447,10 @@ html {
 }
 
 #nav-about:hover::after {
-  content: " 😃 ";
+  content: " 😎 ";
   font-size: smaller;
 }
-
+ */
 .iframe-responsive {
   position: absolute;
   top: 0;
@@ -493,4 +551,37 @@ html {
 
 .bg-dark {
   background-color: #000000 !important;
+}
+
+/* Photo Gallery (Carousel) */
+.carousel-item img {
+  width: 100%;
+}
+
+.carousel-caption,
+.black-highlight {
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+#newstopia-ui-gallery .carousel-control-prev-icon,
+#d3-designs-gallery .carousel-control-prev-icon,
+#d3-designs-gallery .carousel-control-next-icon,
+#newstopia-ui-gallery .carousel-control-next-icon,
+.rounded-buttons .carousel-control-next-icon,
+.rounded-buttons .carousel-control-prev-icon {
+  background: rgba(0, 0, 0) !important;
+  border-radius: 50%;
+}
+/* Newstopia-UI-img */
+.newstopia-ui-img,
+.project-slideshow-img {
+  height: 70vh;
+  object-fit: contain;
+}
+
+/* Single project image */
+.single-project-image {
+  height: 50vh;
+  object-fit: contain;
+  border: 1px solid rgb(173, 173, 173);
 }

@@ -1,254 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="fa/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/styles.min.css" />
-    <title>404 Not Found - Aan Patel</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand gf-cairo" href="./"
-          ><img src="res/nav-logo.png" height="32" width="32"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <link rel="stylesheet" href="fa/css/all.min.css" />
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="./#about-pg" id="nav-about">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-projects" href="./projects/"
-                >Projects</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="nav-community" href="./community/"
-                >Community</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="nav-resume"
-                href="./res/resume.pdf"
-                target="_blank"
-                >Resume</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <br /><br />
-    <div class="jumbotron text-center pb-2">
-      <h2 class="gf-cairo h1">
-        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>, but
-        I can't find what you're looking for
-      </h2>
+  <link rel="stylesheet" href="css/styles.min.css" />
+  <title>404 Not Found - Aan Patel</title>
+</head>
+
+<body>
+  <header class="fixed-top" id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand gf-cairo" href="./"><img src="res/nav-logo.png" height="28" width="70"
+          alt="Aan Patel's website logo" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./" id="nav-about">About Me <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-projects" href="./projects/">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-community" href="./community/">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav-resume" href="./res/resume.pdf" target="_blank">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron text-center pb-2 material-box bg-gray transition-smooth br-0" id="hello-text">
+      <h1 class="gf-cairo">
+        Hi, I'm <span class="glitch" data-text="Aan Patel">Aan Patel</span>, but I can't find what you're looking for
+        (404 error).
+      </h1>
       <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="socials-row">
           <div class="col-5 d-none d-xl-block">
             <h2 class="h-social">
-              <a
-                href="https://www.github.com/aannirajpatel/"
-                target="_blank"
-                style="text-decoration: none; color: #212529;"
-                ><i
-                  class="fab fa-github-square hov-en-purple color-transition-smooth"
-                ></i></a
-              >&nbsp;&nbsp;
-              <a
-                href="https://www.linkedin.com/in/aan-patel/"
-                target="_blank"
-                style="text-decoration: none; color: #212529;"
-                ><i
-                  class="fab fa-linkedin hov-en-blue color-transition-smooth"
-                ></i
-              ></a>
+              <a href="https://www.github.com/aannirajpatel/" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
+              <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-linkedin hov-en-linkedin color-transition-smooth"></i></a>
             </h2>
           </div>
           <div class="col-xl-2 col-xs-12">
-            <img
-              src="res/aanpatel.png"
-              class="img-fluid mt-4 mb-4 img-glitch"
-              alt="Aan Patel's Photo"
-              onmouseover="profileGlitchOn(this)"
-              onmouseout="profileGlitchOff(this)"
-            />
-            <img src="res/aanpatel-glitch.png" class="d-none" />
+            <img src="res/aanpatel.png" class="img-fluid mt-4 mb-4 img-glitch" alt="Aan Patel's Photo"
+              onmouseover="profileGlitchOn(this)" onmouseout="profileGlitchOff(this)" />
+            <img src="res/aanpatel-glitch.png" class="d-none" alt="Aan Patel's profile picture." />
           </div>
           <div class="col-5 d-none d-xl-block">
             <h2 class="h-social">
-              <a
-                href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg"
-                target="_blank"
-                style="text-decoration: none; color: #212529;"
-                ><i
-                  class="fab fa-youtube hov-en-red color-transition-smooth"
-                ></i></a
-              >&nbsp;&nbsp;
-              <a
-                href="mailto:aanpatel.tech@gmail.com"
-                target="_blank"
-                style="text-decoration: none; color: #212529;"
-                ><i
-                  class="fas fa-envelope hov-en-blue color-transition-smooth"
-                ></i
-              ></a>
+              <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
+                style="text-decoration: none; color: #fff"><i
+                  class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
+              <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #fff"><i
+                  class="fas fa-envelope hov-en-email color-transition-smooth"></i></a>
             </h2>
           </div>
         </div>
-        <h1 class="gf-cairo">
-          <span
-            id="content-1"
-            style="display: inline-block; position: relative;"
-            class="glitch-cycle"
-            >404</span
-          >
-          <span
-            id="content-2"
-            style="display: inline-block; position: relative;"
-            class="glitch-cycle"
-            data-text="Web Development"
-            >Not Found</span
-          >
-        </h1>
+        <h2 class="gf-cairo">
+          I love&nbsp;
+          <span id="content-1" style="display: inline-block; position: relative" class="glitch-cycle">App
+            Development</span>
+          <span id="content-2" style="display: inline-block; position: relative" class="glitch-cycle"
+            data-text="Web Development">Web Development</span>
+          <span id="content-3" style="display: inline-block; position: relative" class="glitch-cycle">Computer
+            Vision</span>
+          <span id="content-4" style="display: inline-block; position: relative" class="glitch-cycle">IoT, AI, &
+            Robotics</span>
+          <span id="content-5" style="display: inline-block; position: relative" class="glitch-cycle">Tech
+            Education</span>
+        </h2>
       </div>
-      <p class="text-center"><span class="fas"></span></p>
+      <p class="text-center h3 hover-glow color-transition-smooth" id="go-down"><span class="fas fa-angle-down"></span>
+      </p>
     </div>
-    <hr />
-    <section class="container">
-      <div class="text-center">
-        &copy; 2020, Aan Patel. All rights reserved<br />
-        <hr />
-        <p class="h2">
-          <a
-            href="https://www.github.com/aannirajpatel/"
-            target="_blank"
-            style="text-decoration: none; color: #212529;"
-            ><i
-              class="fab fa-github-square hov-en-purple color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="https://www.linkedin.com/in/aan-patel/"
-            target="_blank"
-            style="text-decoration: none; color: #212529;"
-            ><i
-              class="fab fa-linkedin hov-en-blue color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg"
-            target="_blank"
-            style="text-decoration: none; color: #212529;"
-            ><i
-              class="fab fa-youtube hov-en-red color-transition-smooth"
-            ></i></a
-          >&nbsp;&nbsp;
-          <a
-            href="mailto:aanpatel.tech@gmail.com"
-            target="_blank"
-            style="text-decoration: none; color: #212529;"
-            ><i class="fas fa-envelope hov-en-blue color-transition-smooth"></i
-          ></a>
-        </p>
-      </div>
-    </section>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var spans = $('span[id^="content-"]').hide(),
-        i = 0;
+  </header>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br />
+  <hr />
+  <section class="container">
+    <div class="text-center">
+      &copy; 2020, Aan Patel. All rights reserved<br />
+      <hr />
+      <p class="h2">
+        <a href="https://www.github.com/aannirajpatel/" target="_blank"
+          style="text-decoration: none; color: #212529;"><i
+            class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
+          style="text-decoration: none; color: #212529;"><i
+            class="fab fa-linkedin hov-en-linkedin color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank"
+          style="text-decoration: none; color: #212529;"><i
+            class="fab fa-youtube hov-en-red color-transition-smooth"></i></a>&nbsp;&nbsp;
+        <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #212529;"><i
+            class="fas fa-envelope hov-en-email color-transition-smooth"></i></a>
+      </p>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script>
+    var spans = $('span[id^="content-"]').hide(),
+      i = 0;
 
-      (function cycle() {
-        spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
-        i = ++i % spans.length;
-      })();
+    (function cycle() {
+      spans.eq(i).fadeIn(500).delay(1500).fadeOut(500, cycle);
+      i = ++i % spans.length;
+    })();
 
-      function profileGlitchOff(imgTag) {}
-      function profileGlitchOn(imgTag) {
-        $(imgTag)
-          .fadeOut(0, function () {
-            imgTag.src = "res/aanpatel-glitch.png";
-          })
-          .fadeIn(100, function () {
-            imgTag.src = "res/aanpatel.png";
-          });
+    function profileGlitchOff(imgTag) { }
+    function profileGlitchOn(imgTag) {
+      $(imgTag)
+        .fadeOut(0, function () {
+          imgTag.src = "res/aanpatel-glitch.png";
+        })
+        .fadeIn(100, function () {
+          imgTag.src = "res/aanpatel.png";
+        });
+    }
+    window.onload = (event) => {
+      randomGlitchImg();
+    };
+
+    var window_focus;
+
+    window.onblur = function () {
+      window_focus = false;
+    };
+
+    window.onfocus = function () {
+      window_focus = true;
+    };
+
+    function randomGlitchImg() {
+      $(".img-glitch")
+        .fadeOut(0, function () {
+          $(".img-glitch").attr("src", "res/aanpatel-glitch.png");
+        })
+        .fadeIn(200, function () {
+          $(".img-glitch").attr("src", "res/aanpatel.png");
+        });
+      if (window_focus) {
+        setTimeout(randomGlitchImg, 10000);
       }
-      window.onload = (event) => {
-        randomGlitchImg();
-      };
-
-      var window_focus;
-
-      window.onblur = function () {
-        window_focus = false;
-      };
-
-      window.onfocus = function () {
-        window_focus = true;
-      };
-
-      function randomGlitchImg() {
-        $(".img-glitch")
-          .fadeOut(0, function () {
-            $(".img-glitch").attr("src", "res/aanpatel-glitch.png");
-          })
-          .fadeIn(200, function () {
-            $(".img-glitch").attr("src", "res/aanpatel.png");
-          });
-        if (window_focus) {
-          setTimeout(randomGlitchImg, 10000);
-        }
-      }
-      console.log(
-        "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
-      );
-    </script>
-    <script type="application/ld+json">
+    }
+    console.log(
+      "Here's a gift for opening the console: aanpatel.tech@gmail.com. Send code \"CONSOLEHERO\" in the email. I'll reach back ASAP! Join my team or make me join you, lets meet and build cool stuff together (or maybe have a coffee)!"
+    );
+  </script>
+  <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -262,5 +184,6 @@
         ]
       }
     </script>
-  </body>
+</body>
+
 </html>
