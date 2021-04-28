@@ -563,9 +563,11 @@ html {
   background: rgba(0, 0, 0, 0.45) !important;
 }
 
-#newstopia-ui-gallery .carousel-control-prev-icon,
+#lil-gallery .carousel-control-prev-icon,
+#lil-gallery .carousel-control-next-icon,
 #d3-designs-gallery .carousel-control-prev-icon,
 #d3-designs-gallery .carousel-control-next-icon,
+#newstopia-ui-gallery .carousel-control-prev-icon,
 #newstopia-ui-gallery .carousel-control-next-icon,
 .rounded-buttons .carousel-control-next-icon,
 .rounded-buttons .carousel-control-prev-icon {
@@ -574,6 +576,7 @@ html {
 }
 /* Newstopia-UI-img */
 .newstopia-ui-img,
+.lil-img,
 .project-slideshow-img {
   height: 70vh;
   object-fit: contain;
@@ -584,4 +587,10 @@ html {
   height: 50vh;
   object-fit: contain;
   border: 1px solid rgb(173, 173, 173);
+}
+
+/* For images in the Community section */
+.card-img {
+  object-fit: contain;
+  max-width: max-content;
 }
