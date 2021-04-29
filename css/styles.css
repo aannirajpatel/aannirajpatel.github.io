@@ -596,3 +596,10 @@ html {
   object-fit: contain;
   max-width: max-content;
 }
+
+/* Community images when shown side-by-side with embedded posts, must be vertically centered */
+.img-community {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
