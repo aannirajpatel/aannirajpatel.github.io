@@ -1,0 +1,11 @@
+{
+  "name": "aanpatel-tech",
+  "private": true,
+  "description": "Source for aanpatel.tech, a static portfolio site served via GitHub Pages",
+  "scripts": {
+    "dev": "serve . -l 8736"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
