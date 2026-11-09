@@ -269,6 +269,14 @@ body.site .form-group.row > label { font-weight: 700; margin: 0 6px 0 0; }
 body.site .custom-control-label { color: var(--text); cursor: pointer; }
 body.site .custom-control-input:checked ~ .custom-control-label::before { background-color: var(--accent); border-color: var(--accent); }
 
+/* Long text blocks inside cards scroll after a set height */
+body.site .scroll-text { max-height: 420px; overflow-y: auto; padding-right: 14px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; overscroll-behavior: contain; }
+body.site .scroll-text:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+body.site .scroll-text::-webkit-scrollbar { width: 8px; }
+body.site .scroll-text::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+body.site .scroll-text::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+@media (max-width: 991px) { body.site .scroll-text { max-height: 360px; } }
+
 /* Misc Bootstrap bits on dark/light */
 body.site hr { border-top-color: var(--border); }
 body.site .table { color: var(--text); }
