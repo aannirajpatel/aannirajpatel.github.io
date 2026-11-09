@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <script>document.documentElement.classList.add('js');</script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -25,9 +26,27 @@
   <style>
     .guide { max-width: 860px; margin: 0 auto; padding: 0 12px 24px; }
     .guide .intro { display: flex; gap: 14px; align-items: flex-start; background: #eef4ff; border: 1px solid #cddcff;
-      border-left: 5px solid #4285f4; border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; }
+      border-left: 5px solid #4285f4; border-radius: 8px; padding: 14px 18px; margin-bottom: 22px; }
     .guide .intro i { color: #4285f4; font-size: 1.6rem; margin-top: 2px; }
     .guide .intro p { margin: 0; }
+
+    /* OS tabs */
+    .os-label { font-weight: 700; margin-bottom: 8px; }
+    .os-tabs { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .os-tab { flex: 1 1 0; min-width: 130px; display: flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 12px 14px; font-weight: 700; font-size: 1.05rem; cursor: pointer; background: #fff; color: #333;
+      border: 2px solid #e3e6ea; border-radius: 10px; transition: all .15s; }
+    .os-tab i { font-size: 1.3rem; }
+    .os-tab:hover { border-color: #b8c4d6; background: #f7f9fc; }
+    .os-tab.active { color: #fff; border-color: transparent; box-shadow: 0 2px 6px rgba(0,0,0,.18); }
+    .os-tab[data-os="windows"].active { background: #0078d4; }
+    .os-tab[data-os="macos"].active { background: #444; }
+    .os-tab[data-os="linux"].active { background: #e95420; }
+    .os-tab:focus { outline: 3px solid rgba(66,133,244,.45); outline-offset: 2px; }
+    .js .os-panel { display: none; }
+    .js .os-panel.active { display: block; }
+    .os-detect { font-size: .85rem; color: #6c757d; margin: -12px 0 18px; }
+
     .step { border: 1px solid #e3e6ea; border-radius: 10px; margin-bottom: 22px; overflow: hidden;
       box-shadow: 0 1px 3px rgba(0,0,0,.05); background: #fff; }
     .step-head { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: #f7f8fa;
@@ -35,15 +54,12 @@
     .step-head h3 { margin: 0; font-size: 1.25rem; }
     .step-num { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; color: #fff; font-weight: 700;
       display: flex; align-items: center; justify-content: center; }
-    .step:nth-of-type(4n+1) .step-num { background: #4285f4; }
-    .step:nth-of-type(4n+2) .step-num { background: #ea4335; }
-    .step:nth-of-type(4n+3) .step-num { background: #f9ab00; }
-    .step:nth-of-type(4n+4) .step-num { background: #34a853; }
+    .os-panel .step:nth-of-type(4n+1) .step-num { background: #4285f4; }
+    .os-panel .step:nth-of-type(4n+2) .step-num { background: #ea4335; }
+    .os-panel .step:nth-of-type(4n+3) .step-num { background: #f9ab00; }
+    .os-panel .step:nth-of-type(4n+4) .step-num { background: #34a853; }
     .step-body { padding: 16px 20px 6px; }
     .step-body p, .step-body ul { margin-bottom: 14px; }
-    .os { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
-      padding: 2px 9px; border-radius: 999px; margin-right: 6px; vertical-align: 1px; color: #fff; }
-    .os-win { background: #0078d4; } .os-mac { background: #555; } .os-lin { background: #e95420; }
     .codebox { position: relative; margin: 6px 0 16px; }
     .codebox pre { background: #0e1116; color: #e6edf3; border-radius: 8px; padding: 14px 64px 14px 16px; margin: 0;
       font-size: .9rem; line-height: 1.5; overflow-x: auto; }
@@ -59,6 +75,7 @@
     .guide code { background: #f1f3f5; color: #c7254e; padding: 1px 6px; border-radius: 4px; font-size: .88em; }
     .trouble th { background: #f7f8fa; }
     .trouble td { vertical-align: top; }
+    .js .trouble tr[data-os]:not(.show) { display: none; }
     .cta { text-align: center; margin: 28px 0 8px; }
   </style>
 </head>
@@ -99,70 +116,204 @@
           installers. Stuck? Ask in the event chat or join 10 minutes early.</p>
       </div>
 
-      <div class="step">
-        <div class="step-head"><span class="step-num">1</span><h3>A Linux-like shell</h3></div>
-        <div class="step-body">
-          <p><span class="os os-win">Windows</span>Use WSL 2 + Ubuntu. In PowerShell run:</p>
-          <div class="codebox"><pre><code><span class="prompt">PS&gt; </span>wsl --install -d Ubuntu</code></pre></div>
-          <p>Restart if asked, then open Ubuntu and create a user. <b>Run every command below inside Ubuntu.</b></p>
-          <p><span class="os os-mac">macOS</span><span class="os os-lin">Linux</span>Your normal terminal is fine.</p>
-        </div>
+      <div class="os-label">Pick your operating system:</div>
+      <div class="os-tabs" role="tablist" aria-label="Operating system">
+        <button class="os-tab" role="tab" data-os="windows" type="button"><i class="fab fa-windows"></i>Windows</button>
+        <button class="os-tab" role="tab" data-os="macos" type="button"><i class="fab fa-apple"></i>macOS</button>
+        <button class="os-tab" role="tab" data-os="linux" type="button"><i class="fab fa-linux"></i>Linux</button>
       </div>
+      <div class="os-detect" id="os-detect" hidden>We picked this tab based on your device. Switch any time.</div>
 
-      <div class="step">
-        <div class="step-head"><span class="step-num">2</span><h3>Docker</h3></div>
-        <div class="step-body">
-          <p><span class="os os-win">Windows</span><span class="os os-mac">macOS</span>Install Docker Desktop.</p>
-          <div class="callout tip"><i class="fas fa-lightbulb"></i><b>Windows:</b> enable
-            <i>Settings &rarr; General &rarr; Use the WSL 2 based engine</i>, then
-            <i>Settings &rarr; Resources &rarr; WSL Integration &rarr; your Ubuntu distro</i>. Apply &amp; restart and
-            reopen Ubuntu.</div>
-          <p><span class="os os-lin">Linux</span>Install Docker Engine and make sure your user can run
-            <code>docker</code> (docker group).</p>
-          <p>Verify, inside Ubuntu on Windows:</p>
-          <div class="codebox"><pre><code>docker version
+      <!-- ================= WINDOWS ================= -->
+      <div class="os-panel" data-os="windows" role="tabpanel">
+        <div class="step">
+          <div class="step-head"><span class="step-num">1</span><h3>Install WSL 2 + Ubuntu</h3></div>
+          <div class="step-body">
+            <p>We use a Linux shell on Windows so every command matches what you'll see on the screen. In
+              PowerShell run:</p>
+            <div class="codebox"><pre><code><span class="prompt">PS&gt; </span>wsl --install -d Ubuntu</code></pre></div>
+            <p>Restart if asked, then open <b>Ubuntu</b> from the Start menu and create a username and password.
+              <b>Run every command below inside Ubuntu.</b></p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">2</span><h3>Docker Desktop with WSL integration</h3></div>
+          <div class="step-body">
+            <p>Install <a href="https://www.docker.com/products/docker-desktop/" target="_blank"
+                rel="noopener">Docker Desktop for Windows</a>, then:</p>
+            <ul>
+              <li><i>Settings &rarr; General</i>: enable <b>Use the WSL 2 based engine</b></li>
+              <li><i>Settings &rarr; Resources &rarr; WSL Integration</i>: turn on your <b>Ubuntu</b> distro</li>
+              <li><b>Apply &amp; restart</b>, then reopen Ubuntu</li>
+            </ul>
+            <p>Verify inside Ubuntu:</p>
+            <div class="codebox"><pre><code>docker version
 docker ps</code></pre></div>
-          <div class="callout expect"><i class="fas fa-check-circle"></i>Both commands run without a connection
-            error.</div>
+            <div class="callout expect"><i class="fas fa-check-circle"></i>Both commands run without a connection
+              error.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="step">
-        <div class="step-head"><span class="step-num">3</span><h3>kubectl and kind</h3></div>
-        <div class="step-body">
-          <p>Install the <b>latest stable</b> release of each using the official instructions:</p>
-          <ul>
-            <li><b>kubectl:</b> <a href="https://kubernetes.io/docs/tasks/tools/" target="_blank"
-                rel="noopener">kubernetes.io/docs/tasks/tools</a></li>
-            <li><b>kind:</b> <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installation" target="_blank"
-                rel="noopener">kind.sigs.k8s.io quick start</a></li>
-          </ul>
-          <div class="callout tip"><i class="fas fa-lightbulb"></i>Optional: a tool-version manager such as
-            <code>mise</code> can install both for you. If you use one, activate it for the shell you actually use
-            (zsh vs bash).</div>
-          <p>Verify:</p>
-          <div class="codebox"><pre><code>kubectl version --client
+        <div class="step">
+          <div class="step-head"><span class="step-num">3</span><h3>Install kubectl and kind</h3></div>
+          <div class="step-body">
+            <p>Inside Ubuntu, install the <b>latest stable Linux</b> release of each:</p>
+            <ul>
+              <li><b>kubectl:</b> <a href="https://kubernetes.io/docs/tasks/tools/#kubectl" target="_blank"
+                  rel="noopener">kubernetes.io/docs/tasks/tools</a> (choose Linux)</li>
+              <li><b>kind:</b> <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installing-from-release-binaries"
+                  target="_blank" rel="noopener">kind quick start</a> (choose Linux)</li>
+            </ul>
+            <div class="callout tip"><i class="fas fa-lightbulb"></i>Optional: a tool-version manager such as
+              <code>mise</code> can install both. If you use one, activate it for the shell you actually use (zsh vs
+              bash).</div>
+            <p>Verify:</p>
+            <div class="codebox"><pre><code>kubectl version --client
 kind version</code></pre></div>
+          </div>
         </div>
-      </div>
 
-      <div class="step">
-        <div class="step-head"><span class="step-num">4</span><h3>Work in the Linux filesystem</h3></div>
-        <div class="step-body">
-          <p><span class="os os-win">Windows / WSL</span>Create a working folder under your Linux home:</p>
-          <div class="codebox"><pre><code>mkdir -p ~/k8s-learning &amp;&amp; cd ~/k8s-learning</code></pre></div>
-          <p>Keep files under <code>~</code>, not <code>/mnt/c/...</code>. Linux tools work much more smoothly there.
-          </p>
+        <div class="step">
+          <div class="step-head"><span class="step-num">4</span><h3>Work in the Linux filesystem</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>mkdir -p ~/k8s-learning &amp;&amp; cd ~/k8s-learning</code></pre></div>
+            <p>Keep files under <code>~</code>, not <code>/mnt/c/...</code>. Linux tools work much more smoothly
+              there.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="step">
-        <div class="step-head"><span class="step-num">5</span><h3>Optional: create the cluster early</h3></div>
-        <div class="step-body">
-          <div class="codebox"><pre><code>kind create cluster --name k8s-learning
+        <div class="step">
+          <div class="step-head"><span class="step-num">5</span><h3>Optional: create the cluster early</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>kind create cluster --name k8s-learning
 kubectl get nodes</code></pre></div>
-          <div class="callout expect"><i class="fas fa-check-circle"></i>You should see one node with STATUS
-            <code>Ready</code>. Doing this ahead means the image download won't slow you down during the session.
+            <div class="callout expect"><i class="fas fa-check-circle"></i>You should see one node with STATUS
+              <code>Ready</code>. Doing this ahead means the image download won't slow you down during the session.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MACOS ================= -->
+      <div class="os-panel" data-os="macos" role="tabpanel">
+        <div class="step">
+          <div class="step-head"><span class="step-num">1</span><h3>Open Terminal</h3></div>
+          <div class="step-body">
+            <p>The built-in <b>Terminal</b> app (or iTerm2) is all you need. Optionally install
+              <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>, which makes step 3 a one-liner.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">2</span><h3>Install Docker Desktop</h3></div>
+          <div class="step-body">
+            <p>Install <a href="https://www.docker.com/products/docker-desktop/" target="_blank"
+                rel="noopener">Docker Desktop for Mac</a> (Apple Silicon or Intel, whichever matches your Mac),
+              open it, and wait until the engine shows <b>Running</b>.</p>
+            <p>Verify:</p>
+            <div class="codebox"><pre><code>docker version
+docker ps</code></pre></div>
+            <div class="callout expect"><i class="fas fa-check-circle"></i>Both commands run without a connection
+              error.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">3</span><h3>Install kubectl and kind</h3></div>
+          <div class="step-body">
+            <p>With Homebrew:</p>
+            <div class="codebox"><pre><code>brew install kubectl kind</code></pre></div>
+            <p>Without Homebrew, follow the official instructions:
+              <a href="https://kubernetes.io/docs/tasks/tools/#kubectl" target="_blank" rel="noopener">kubectl</a>
+              and
+              <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installation" target="_blank"
+                rel="noopener">kind</a> (choose macOS).</p>
+            <p>Verify:</p>
+            <div class="codebox"><pre><code>kubectl version --client
+kind version</code></pre></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">4</span><h3>Make a working folder</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>mkdir -p ~/k8s-learning &amp;&amp; cd ~/k8s-learning</code></pre></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">5</span><h3>Optional: create the cluster early</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>kind create cluster --name k8s-learning
+kubectl get nodes</code></pre></div>
+            <div class="callout expect"><i class="fas fa-check-circle"></i>You should see one node with STATUS
+              <code>Ready</code>. Doing this ahead means the image download won't slow you down during the session.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= LINUX ================= -->
+      <div class="os-panel" data-os="linux" role="tabpanel">
+        <div class="step">
+          <div class="step-head"><span class="step-num">1</span><h3>Open a terminal</h3></div>
+          <div class="step-body">
+            <p>Any terminal on your distro works. Every command below is run there.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">2</span><h3>Install Docker Engine</h3></div>
+          <div class="step-body">
+            <p>Follow the
+              <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">official Docker Engine
+                install guide</a> for your distro, then let your user run Docker without <code>sudo</code>:</p>
+            <div class="codebox"><pre><code>sudo usermod -aG docker $USER
+newgrp docker</code></pre></div>
+            <p>Verify:</p>
+            <div class="codebox"><pre><code>docker version
+docker ps</code></pre></div>
+            <div class="callout expect"><i class="fas fa-check-circle"></i>Both commands run without a connection or
+              permission error. If you still get a permission error, log out and back in.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">3</span><h3>Install kubectl and kind</h3></div>
+          <div class="step-body">
+            <p>Install the <b>latest stable</b> release of each:</p>
+            <ul>
+              <li><b>kubectl:</b> <a href="https://kubernetes.io/docs/tasks/tools/#kubectl" target="_blank"
+                  rel="noopener">kubernetes.io/docs/tasks/tools</a></li>
+              <li><b>kind:</b> <a href="https://kind.sigs.k8s.io/docs/user/quick-start/#installation" target="_blank"
+                  rel="noopener">kind quick start</a></li>
+            </ul>
+            <div class="callout tip"><i class="fas fa-lightbulb"></i>Optional: a tool-version manager such as
+              <code>mise</code> can install both. If you use one, activate it for the shell you actually use (zsh vs
+              bash).</div>
+            <p>Verify:</p>
+            <div class="codebox"><pre><code>kubectl version --client
+kind version</code></pre></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">4</span><h3>Make a working folder</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>mkdir -p ~/k8s-learning &amp;&amp; cd ~/k8s-learning</code></pre></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="step-num">5</span><h3>Optional: create the cluster early</h3></div>
+          <div class="step-body">
+            <div class="codebox"><pre><code>kind create cluster --name k8s-learning
+kubectl get nodes</code></pre></div>
+            <div class="callout expect"><i class="fas fa-check-circle"></i>You should see one node with STATUS
+              <code>Ready</code>. Doing this ahead means the image download won't slow you down during the session.
+            </div>
           </div>
         </div>
       </div>
@@ -174,14 +325,18 @@ kubectl get nodes</code></pre></div>
             <tr><th style="width:38%">Symptom</th><th>Fix</th></tr>
           </thead>
           <tbody>
-            <tr><td><code>docker: command not found</code> in Ubuntu</td>
+            <tr data-os="windows"><td><code>docker: command not found</code> in Ubuntu</td>
               <td>Enable WSL Integration for your distro in Docker Desktop, apply, reopen Ubuntu.</td></tr>
-            <tr><td><code>kind: command not found</code> after install</td>
+            <tr data-os="linux"><td><code>permission denied</code> running docker</td>
+              <td>Run <code>sudo usermod -aG docker $USER</code>, then log out and back in.</td></tr>
+            <tr data-os="windows macos linux"><td><code>kind: command not found</code> after install</td>
               <td>The tool is not on PATH for your current shell. Activate your version manager for zsh/bash and
                 reload the shell.</td></tr>
-            <tr><td><code>Cannot connect to the Docker daemon</code></td>
+            <tr data-os="windows macos"><td><code>Cannot connect to the Docker daemon</code></td>
               <td>Start Docker Desktop and wait until the engine shows Running.</td></tr>
-            <tr><td>Cluster creation is very slow</td>
+            <tr data-os="linux"><td><code>Cannot connect to the Docker daemon</code></td>
+              <td>Start the service: <code>sudo systemctl start docker</code>.</td></tr>
+            <tr data-os="windows macos linux"><td>Cluster creation is very slow</td>
               <td>The first run downloads the node image. Create the cluster early or use faster Wi-Fi.</td></tr>
           </tbody>
         </table>
@@ -218,7 +373,7 @@ kubectl get nodes</code></pre></div>
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script>
-    // Add a "Copy" button to every code block (skips the PS> prompt text).
+    // ---- Copy buttons ----
     document.querySelectorAll('.codebox').forEach(function (box) {
       var btn = document.createElement('button');
       btn.className = 'copy-btn';
@@ -235,6 +390,49 @@ kubectl get nodes</code></pre></div>
       });
       box.appendChild(btn);
     });
+
+    // ---- OS tabs: #windows / #macos / #linux, else auto-detect ----
+    var OSES = ['windows', 'macos', 'linux'];
+    var tabs = document.querySelectorAll('.os-tab');
+    var panels = document.querySelectorAll('.os-panel');
+    var rows = document.querySelectorAll('.trouble tr[data-os]');
+
+    function detectOS() {
+      var ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '';
+      ua = ua.toLowerCase();
+      if (ua.indexOf('win') > -1) return 'windows';
+      if (ua.indexOf('mac') > -1 || ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1) return 'macos';
+      if (ua.indexOf('linux') > -1 || ua.indexOf('x11') > -1 || ua.indexOf('android') > -1) return 'linux';
+      return 'windows';
+    }
+
+    function select(os, fromUser) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-os') === os;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (p) { p.classList.toggle('active', p.getAttribute('data-os') === os); });
+      rows.forEach(function (r) {
+        r.classList.toggle('show', r.getAttribute('data-os').split(' ').indexOf(os) > -1);
+      });
+      if (fromUser) {
+        try { history.replaceState(null, '', '#' + os); } catch (e) { }
+        document.getElementById('os-detect').hidden = true;
+      }
+    }
+
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { select(t.getAttribute('data-os'), true); });
+    });
+
+    var fromHash = (location.hash || '').replace('#', '');
+    if (OSES.indexOf(fromHash) > -1) {
+      select(fromHash, false);
+    } else {
+      select(detectOS(), false);
+      document.getElementById('os-detect').hidden = false;
+    }
   </script>
 </body>
 
