@@ -604,7 +604,7 @@
   <hr />
   <section class="container">
     <div class="text-center">
-      &copy; 2020, Aan Patel. All rights reserved<br />
+      &copy; <span class="copy-year">2026</span> Aan Patel. All rights reserved<br />
       <hr />
       <p class="h2">
         <a href="https://www.github.com/aannirajpatel/" target="_blank"
@@ -691,6 +691,7 @@
         ]
       }
     </script>
+  <script>document.querySelectorAll('.copy-year').forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
 </body>
 
 </html>
