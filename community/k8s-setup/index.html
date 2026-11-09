@@ -8,9 +8,13 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../fa/css/all.min.css" />
   <link rel="stylesheet" href="../../css/styles.min.css" />
+  <link rel="stylesheet" href="../../css/site.css" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="description"
     content="Setup guide for GDG Chapel Hill's Kubernetes Learning Series, Session 1: Docker, kubectl and kind on Windows (WSL 2), macOS or Linux." />
   <meta property="og:title" content="Kubernetes Session 1 Setup Guide - GDG Chapel Hill">
@@ -25,7 +29,7 @@
   <title>Kubernetes Session 1 Setup Guide - GDG Chapel Hill</title>
   <style>
     .guide { max-width: 860px; margin: 0 auto; padding: 0 12px 24px; }
-    .guide .intro { display: flex; gap: 14px; align-items: flex-start; background: #eef4ff; border: 1px solid #cddcff;
+    .guide .intro { color: #1f2430; display: flex; gap: 14px; align-items: flex-start; background: #eef4ff; border: 1px solid #cddcff;
       border-left: 5px solid #4285f4; border-radius: 8px; padding: 14px 18px; margin-bottom: 22px; }
     .guide .intro i { color: #4285f4; font-size: 1.6rem; margin-top: 2px; }
     .guide .intro p { margin: 0; }
@@ -34,10 +38,10 @@
     .os-label { font-weight: 700; margin-bottom: 8px; }
     .os-tabs { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
     .os-tab { flex: 1 1 0; min-width: 130px; display: flex; align-items: center; justify-content: center; gap: 9px;
-      padding: 12px 14px; font-weight: 700; font-size: 1.05rem; cursor: pointer; background: #fff; color: #333;
-      border: 2px solid #e3e6ea; border-radius: 10px; transition: all .15s; }
+      padding: 12px 14px; font-weight: 700; font-size: 1.05rem; cursor: pointer; background: var(--surface,#fff); color: var(--text,#333);
+      border: 2px solid var(--border,#e3e6ea); border-radius: 10px; transition: all .15s; }
     .os-tab i { font-size: 1.3rem; }
-    .os-tab:hover { border-color: #b8c4d6; background: #f7f9fc; }
+    .os-tab:hover { border-color: var(--accent,#b8c4d6); background: var(--surface-2,#f7f9fc); }
     .os-tab.active { color: #fff; border-color: transparent; box-shadow: 0 2px 6px rgba(0,0,0,.18); }
     .os-tab[data-os="windows"].active { background: #0078d4; }
     .os-tab[data-os="macos"].active { background: #444; }
@@ -45,12 +49,12 @@
     .os-tab:focus { outline: 3px solid rgba(66,133,244,.45); outline-offset: 2px; }
     .js .os-panel { display: none; }
     .js .os-panel.active { display: block; }
-    .os-detect { font-size: .85rem; color: #6c757d; margin: -12px 0 18px; }
+    .os-detect { font-size: .85rem; color: var(--muted,#6c757d); margin: -12px 0 18px; }
 
-    .step { border: 1px solid #e3e6ea; border-radius: 10px; margin-bottom: 22px; overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05); background: #fff; }
-    .step-head { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: #f7f8fa;
-      border-bottom: 1px solid #e3e6ea; }
+    .step { border: 1px solid var(--border,#e3e6ea); border-radius: 10px; margin-bottom: 22px; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,.05); background: var(--surface,#fff); }
+    .step-head { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: var(--surface-2,#f7f8fa);
+      border-bottom: 1px solid var(--border,#e3e6ea); }
     .step-head h3 { margin: 0; font-size: 1.25rem; }
     .step-num { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; color: #fff; font-weight: 700;
       display: flex; align-items: center; justify-content: center; }
@@ -68,21 +72,21 @@
     .copy-btn { position: absolute; top: 8px; right: 8px; border: 1px solid #30363d; background: #21262d; color: #c9d1d9;
       font-size: .75rem; border-radius: 6px; padding: 3px 10px; cursor: pointer; }
     .copy-btn:hover { background: #30363d; }
-    .callout { border-radius: 8px; padding: 10px 14px; margin: 4px 0 16px; font-size: .95rem; }
+    .callout { color: #1f2430; border-radius: 8px; padding: 10px 14px; margin: 4px 0 16px; font-size: .95rem; }
     .callout.expect { background: #e9f7ee; border: 1px solid #b9e3c6; }
     .callout.tip { background: #fff8e1; border: 1px solid #f3dd9a; }
     .callout i { margin-right: 6px; }
-    .guide code { background: #f1f3f5; color: #c7254e; padding: 1px 6px; border-radius: 4px; font-size: .88em; }
-    .trouble th { background: #f7f8fa; }
+    .guide code { background: var(--surface-2,#f1f3f5); color: #c7254e; padding: 1px 6px; border-radius: 4px; font-size: .88em; }
+    .trouble th { background: var(--surface-2,#f7f8fa); }
     .trouble td { vertical-align: top; }
     .js .trouble tr[data-os]:not(.show) { display: none; }
     .cta { text-align: center; margin: 28px 0 8px; }
   </style>
 </head>
 
-<body>
-  <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="site">
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand gf-cairo" href="../../"><img src="../../res/nav-logo.png" height="28" width="70"
           alt="Aan Patel's website logo" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -100,13 +104,13 @@
         </ul>
       </div>
     </nav>
-    <div class="text-center m-0 bg-gray p-2 material-box">
-      <h1 class="gf-cairo m-0">Kubernetes Session 1 Setup</h1>
-      <h2 class="d-none d-md-block m-0">GDG Chapel Hill Kubernetes Learning Series</h2>
-    </div>
   </header>
-  <br><br><br><br><br><br><br><br class="d-none d-md-block">
-
+  <section class="page-hero">
+    <div class="container">
+      <h1>Kubernetes Session 1 Setup</h1>
+      <p>GDG Chapel Hill Kubernetes Learning Series</p>
+    </div>
+  </section>
   <section class="container-fluid">
     <div class="guide">
 
@@ -348,23 +352,17 @@ kubectl get nodes</code></pre></div>
       </div>
     </div>
   </section>
-  <hr />
-  <section class="container">
-    <div class="text-center">
-      &copy; <span class="copy-year">2026</span> Aan Patel. All rights reserved<br />
-      <hr />
-      <p class="h2">
-        <a href="https://www.github.com/aannirajpatel/" target="_blank"
-          style="text-decoration: none; color: #212529;"><i
-            class="fab fa-github-square hov-en-purple color-transition-smooth"></i></a>&nbsp;&nbsp;
-        <a href="https://www.linkedin.com/in/aan-patel/" target="_blank"
-          style="text-decoration: none; color: #212529;"><i
-            class="fab fa-linkedin hov-en-linkedin color-transition-smooth"></i></a>&nbsp;&nbsp;
-        <a href="mailto:aanpatel.tech@gmail.com" target="_blank" style="text-decoration: none; color: #212529;"><i
-            class="fas fa-envelope hov-en-email color-transition-smooth"></i></a>
-      </p>
+  <footer class="site-footer">
+    <div class="container">
+      &copy; <span class="copy-year">2026</span> Aan Patel. All rights reserved.
+      <div class="socials">
+        <a href="https://www.github.com/aannirajpatel/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/aan-patel/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/channel/UCsz3D_V6qmdwv0z_GVxe4Fg" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:aanpatel.tech@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
-  </section>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
